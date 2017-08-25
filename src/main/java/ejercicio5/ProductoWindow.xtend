@@ -21,16 +21,18 @@ class ProductoWindow extends MainWindow<Almacen> {
 		new Label(mainPanel).text = "Producto"
 		new Selector(mainPanel) => [
 			allowNull = false
-			val bindItems = items <=> "productoRepo.productos"
+			bindValueToProperty("producto");
+			bindItemsToProperty("productoRepo.productos")
+			//val bindItems = items <=> "productoRepo.productos"
 //			bindItems(new ObservableProperty(this.modelObject, "productoRepo.productos.precio"))
-			bindItems.adapter = new PropertyAdapter(typeof(Producto), "descripcion")
+			//bindItems.adapter = new PropertyAdapter(typeof(Producto), "descripcion")
 //			value <=> "productoRepo.productos"
 		]
 		
 		new Label(mainPanel).text = "Precio"
 		new Label(mainPanel) => [
-			bindValue(new ObservableProperty(this.modelObject, "productoRepo.productos.precio"))
-			value <=> "producto.precio"
+			bindValue(new ObservableProperty(this.modelObject, "producto"))
+			value <=> "productoRepo.producto.precio"
 		]
 	}	
 	def static main(String[] args) {
