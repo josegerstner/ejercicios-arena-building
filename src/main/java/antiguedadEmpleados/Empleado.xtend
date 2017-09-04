@@ -17,15 +17,15 @@ class Empleado {
 		this.tieneHijos = tieneHijos
 	}
 	
-	def anioIngreso(){
+	protected def anioIngreso(){
 		fechaIngreso.getYear.toString
 	}
 	
-	def mesIngreso(){
+	protected def mesIngreso(){
 		fechaIngreso.getMonthValue.toString
 	}
 	
-	def getDiaIngreso(){
+	protected def getDiaIngreso(){
 		fechaIngreso.getDayOfMonth.toString		
 	}
 	

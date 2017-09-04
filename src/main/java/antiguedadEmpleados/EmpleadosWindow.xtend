@@ -31,20 +31,13 @@ class EmpleadosWindow extends MainWindow<EmpleadosDomain> {
 		]
 		
 		new Label(mainPanel).text = "Fecha Ingreso :"
-		new TextBox(mainPanel) => [
-			value <=> "empleadoSeleccionado.fechaIngreso"
-		]
+		new TextBox(mainPanel).value <=> "fechaIngreso"
 		
 		new Label(mainPanel).text = "Antigüedad :"
-		new NumericField(mainPanel) => [
-			value <=> "empleadoSeleccionado.antiguedad"
-		]
-		
+		new NumericField(mainPanel).value <=> "antiguedad"
 		
 		new Label(mainPanel).text = "¿Tiene Hijos?"
-		new CheckBox(mainPanel) => [
-			value <=> "empleadoSeleccionado.tieneHijos"
-		]
+		new CheckBox(mainPanel).value <=> "tieneHijos"
 	}
 	
 	def static main(String[] args) {
